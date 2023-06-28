@@ -66,7 +66,7 @@ def CNN(X_train_scaled, Y_train_scaled):
     return model
 
 
-def predikcija(model, X_test_scaled):
+def prediction(model, X_test_scaled):
     Y_pred_scaled = model.predict(X_test_scaled)
     return Y_pred_scaled
 
@@ -87,7 +87,7 @@ if __name__ == '__main__':
        X_test = np.array(X_test)
        X_test = scaler_X.transform(X_test.reshape(1, -1))
        # izvršite predikciju
-       prediction = predikcija(model, X_test)
+       prediction = prediction(model, X_test)
        
        # transformišite predikciju nazad u originalni oblik
        temperature = scaler_Y.inverse_transform(prediction)[0][0]
