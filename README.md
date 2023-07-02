@@ -10,5 +10,5 @@ metode iz [main.py](main.py) skripta.
 Kada se aplikacija pokrene neophodno je izabrati fajl koji 
 sadrži intenzitete elektromagnetnog zračenja na određenoj 
 temperaturi i zatim startovati algoritam. Radi demonstracije 
-fajlovi su unapred generisani korisreci [planckGenerator.py](planckGenerator.py) 
+fajlovi su unapred generisani koristeći [planckGenerator.py](planckGenerator.py) 
 skript, i nalaze se u direktorijumu [spectras](spectras).
