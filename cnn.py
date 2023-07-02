@@ -58,6 +58,8 @@ def CNN(X_train_scaled, Y_train_scaled):
 
     model.compile(loss='mse', optimizer='adam')
     model.fit(X_train_scaled, Y_train_scaled, epochs=50, batch_size=16)
+    if not os.path.exists('cnnModel'):
+        os.makedirs('cnnModel')
     model.save(f'cnnModel/planck.h5')
     
     return model
@@ -80,6 +82,7 @@ def cnn_prediction(model_file, file):
     new_intensity = plank_law(wavelengths, T)
     plt.clf()
     plt.plot(wavelengths*1e9, new_intensity, color='red', label='T={}'.format(T))
+    
     
     with open(f'scalers/scaler_Y.pkl', 'rb') as f:
         scalerY = pickle.load(f)
@@ -104,8 +107,8 @@ if __name__ == '__main__':
    scaler_Y = StandardScaler()
    model = generate(scaler_X, scaler_Y)
    
-   with open(f'scalers/scaler_X.pkl', 'wb') as f:
-       pickle.dump(scaler_X, f)
+   if not os.path.exists('scalers'):
+       os.makedirs('scalers')
    
    with open(f'scalers/scaler_Y.pkl', 'wb') as f:
        pickle.dump(scaler_Y, f)
