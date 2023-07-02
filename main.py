@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox, filedialog
 from PIL import ImageTk
-from cnn import cnn_prediction
+from cnn.cnn import cnn_prediction
 
-from elastic_net import *
+from elastic_net.elastic_net import *
 def start_prediction():
 	file = entry.get()
 	if file:
@@ -18,7 +18,7 @@ def start_prediction():
 def predict_by_elastic_net(file):
 	try:
 		Y_pred, T = predict(file)
-		image = Image.open(f"resultsNet/{Y_pred:.2f}K.png")
+		image = Image.open(f"results_net/{Y_pred:.2f}K.png")
 		image = image.resize((400, 300))
 		image_tk = ImageTk.PhotoImage(image)
 		canvas.create_image(0, 0, anchor=tk.NW, image=image_tk)
@@ -30,8 +30,8 @@ def predict_by_elastic_net(file):
 
 def predict_by_cnn(file):
 	try:
-		Y_pred, T = cnn_prediction("cnnModel/planck.h5", file)
-		image = Image.open(f"resultsCNN/{Y_pred:.2f}K.png")
+		Y_pred, T = cnn_prediction("model/planck.h5", file)
+		image = Image.open(f"results_cnn/{Y_pred:.2f}K.png")
 		image = image.resize((400, 300))
 		image_tk = ImageTk.PhotoImage(image)
 		canvas.create_image(0, 0, anchor=tk.NW, image=image_tk)

@@ -1,4 +1,3 @@
-/scalers/
-/resultsNet/
-/resultsCNN/
-/cnnModel/
+
+/results_net/
+/results_cnn/
