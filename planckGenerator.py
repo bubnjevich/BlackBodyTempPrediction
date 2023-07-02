@@ -26,7 +26,7 @@ def generate_X_test_scaled(T):
 
 
 	temperature_str = str(T)
-	filename = f"spectrasNet/T{temperature_str}K.txt"
+	filename = f"spectras/T{temperature_str}K.txt"
 	np.savetxt(filename, X_test_scaled)
 
 	return X_test_scaled
