@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import ElasticNet
@@ -66,6 +68,8 @@ def predict(file):
 	plt.xlabel("Wavelength [nm]")
 	plt.ylabel("Intensity [W/(m^2*nm)]")
 	plt.legend()
+	if not os.path.exists('resultsNet'):
+		os.makedirs('resultsNet')
 	plt.savefig(f'resultsNet/{Y_pred[0][0]:.2f}K.png')
 
 	return Y_pred[0][0], T

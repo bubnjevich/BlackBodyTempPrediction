@@ -1,3 +1,5 @@
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
@@ -90,6 +92,8 @@ def cnn_prediction(model_file, file):
         plt.xlabel("Wavelength [nm]")
         plt.ylabel("Intensity [W/(m^2*nm)]")
         plt.legend()
+        if not os.path.exists('resultsCNN'):
+            os.makedirs('resultsCNN')
         plt.savefig(f'resultsCNN/{temperature:.2f}K.png')
         f.close()
         return temperature, T
