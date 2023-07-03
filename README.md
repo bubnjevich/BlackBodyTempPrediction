@@ -1,4 +1,4 @@
-# BlackBodyTempPrediction
+# Predviđanje temperature crnog tela na temelju Plankovog zakona zračenja
 
  UPUTSTVO ZA POKRETANJE  <br/><hr/>
 
