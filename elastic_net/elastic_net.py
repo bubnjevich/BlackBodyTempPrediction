@@ -4,8 +4,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import ElasticNet
 import matplotlib.pyplot as plt
-import io
-from PIL import Image
+
 
 
 def plank_law(wavelengths, temperature):
