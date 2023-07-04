@@ -62,7 +62,7 @@ def predict(file):
 	Y_pred = scaler_Y.inverse_transform(y_pred)
 	
 	predicted_intensity = plank_law(wavelengths, Y_pred[0][0])
-	plt.plot(wavelengths * 1e9, predicted_intensity, color='black', label='T={}'.format(Y_pred[0][0]))
+	plt.plot(wavelengths * 1e9, predicted_intensity, color='green', label='T={}'.format(round(Y_pred[0][0], 2)))
 	plt.title("Planck's law of radiation")
 	plt.xlabel("Wavelength [nm]")
 	plt.ylabel("Intensity [W/(m^2*nm)]")

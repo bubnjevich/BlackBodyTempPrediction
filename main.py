@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox, filedialog
-from PIL import ImageTk
+from PIL import ImageTk, Image
 from cnn.cnn import cnn_prediction
 
 from elastic_net.elastic_net import *
@@ -53,7 +53,6 @@ def choose_file():
 		entry.insert(0, file_path)
 
 
-# Kreiranje Tkinter prozora
 if __name__ == '__main__':
 	
 	window = tk.Tk()

@@ -93,7 +93,7 @@ def cnn_prediction(model_file, file):
 
         temperature = scalerY.inverse_transform(prediction)[0][0]
         predicted_intensity = plank_law(wavelengths, temperature)
-        plt.plot(wavelengths*1e9, predicted_intensity, color='black', label='T={}'.format(temperature))
+        plt.plot(wavelengths*1e9, predicted_intensity, color='blue', label='T={}'.format(round(float(temperature), 3)))
     
         plt.title("Planck's law of radiation")
         plt.xlabel("Wavelength [nm]")
